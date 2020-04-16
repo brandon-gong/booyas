@@ -1,51 +1,89 @@
 import * as React from 'react';
-import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-import * as WebBrowser from 'expo-web-browser';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Dimensions } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
+import Constants from 'expo-constants';
 
-import { MonoText } from '../components/StyledText';
+export default function HomeScreen({ navigation }) {
 
-export default function HomeScreen() {
+  let backImgIdx = Math.floor(Math.random() * 33);
+  let backImg;
+  switch(backImgIdx) {
+    case 0: backImg = require('../assets/images/0.jpg'); break;
+    case 1: backImg = require('../assets/images/1.jpg'); break;
+    case 2: backImg = require('../assets/images/2.jpg'); break;
+    case 3: backImg = require('../assets/images/3.jpg'); break;
+    case 4: backImg = require('../assets/images/4.jpg'); break;
+    case 5: backImg = require('../assets/images/5.jpg'); break;
+    case 6: backImg = require('../assets/images/6.jpg'); break;
+    case 7: backImg = require('../assets/images/7.jpg'); break;
+    case 8: backImg = require('../assets/images/8.jpg'); break;
+    case 9: backImg = require('../assets/images/9.jpg'); break;
+    case 10: backImg = require('../assets/images/10.jpg'); break;
+    case 11: backImg = require('../assets/images/11.jpg'); break;
+    case 12: backImg = require('../assets/images/12.jpg'); break;
+    case 13: backImg = require('../assets/images/13.jpg'); break;
+    case 14: backImg = require('../assets/images/14.jpg'); break;
+    case 15: backImg = require('../assets/images/15.jpg'); break;
+    case 16: backImg = require('../assets/images/16.jpg'); break;
+    case 17: backImg = require('../assets/images/17.jpg'); break;
+    case 18: backImg = require('../assets/images/18.jpg'); break;
+    case 19: backImg = require('../assets/images/19.jpg'); break;
+    case 20: backImg = require('../assets/images/20.jpg'); break;
+    case 21: backImg = require('../assets/images/21.jpg'); break;
+    case 22: backImg = require('../assets/images/22.jpg'); break;
+    case 23: backImg = require('../assets/images/23.jpg'); break;
+    case 24: backImg = require('../assets/images/24.jpg'); break;
+    case 25: backImg = require('../assets/images/25.jpg'); break;
+    case 26: backImg = require('../assets/images/26.jpg'); break;
+    case 27: backImg = require('../assets/images/27.jpg'); break;
+    case 28: backImg = require('../assets/images/28.jpg'); break;
+    case 29: backImg = require('../assets/images/29.jpg'); break;
+    case 30: backImg = require('../assets/images/30.jpg'); break;
+    case 31: backImg = require('../assets/images/31.jpg'); break;
+    case 32: backImg = require('../assets/images/32.jpg'); break;
+  }
+
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
-          <Image
-            source={
-              __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
-            }
-            style={styles.welcomeImage}
-          />
-        </View>
+      <View style={styles.welcomeContainer}>
+        <Image
+          source={backImg}
+          style={styles.welcomeImage}
+        />
+        <View style={styles.tintOverlay}></View>
+        <Text style={styles.welcomeText}>Welcome to</Text>
+        <Image
+          source={require('../assets/images/booyas-outlined.png')}
+          style={styles.logo}
+        />
+        
+      </View>
+      <TouchableOpacity style={{padding: 10, position: "relative", top: Constants.statusBarHeight, left: 10, zIndex: 4, width: 45, height: 45 + Constants.statusBarHeight}} onPress={() => navigation.navigate("Settings")}>
+        <FontAwesome5
+          name={"cog"}
+          size={25}
+          color={"white"}
+        />
+      </TouchableOpacity>
 
-        <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
-
-          <Text style={styles.getStartedText}>Open up the code for this screen:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>screens/HomeScreen.js</MonoText>
-          </View>
-
-          <Text style={styles.getStartedText}>
-            Change any of the text, save the file, and your app will automatically reload.
-          </Text>
-        </View>
-
-        <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
+      <View style={{flex: 1, backgroundColor: "transparent", position: "absolute", top: Dimensions.get('window').height - 180}} contentContainerStyle={styles.contentContainer}>
+        <View style={styles.mainContainer}>
+          <TouchableOpacity onPress={() => navigation.navigate("Order")}>
+            <View style={styles.getStartedButton}>
+              <Text style={styles.gSBt}>Get Started &nbsp;&nbsp;</Text><FontAwesome5
+          name={"angle-right"}
+          size={25}
+          color={"white"}
+        />
+            </View>
           </TouchableOpacity>
-        </View>
-      </ScrollView>
-
-      <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-        <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-          <MonoText style={styles.codeHighlightText}>navigation/BottomTabNavigator.js</MonoText>
+          <TouchableOpacity onPress={() => navigation.navigate("Contact")}>
+            <View style={styles.contactButton}>
+              <Text style={styles.cBt}>Contact us</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -56,124 +94,91 @@ HomeScreen.navigationOptions = {
   header: null,
 };
 
-function DevelopmentModeNotice() {
-  if (__DEV__) {
-    const learnMoreButton = (
-      <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-        Learn more
-      </Text>
-    );
-
-    return (
-      <Text style={styles.developmentModeText}>
-        Development mode is enabled: your app will be slower but you can use useful development
-        tools. {learnMoreButton}
-      </Text>
-    );
-  } else {
-    return (
-      <Text style={styles.developmentModeText}>
-        You are not in development mode: your app will run at full speed.
-      </Text>
-    );
-  }
-}
-
-function handleLearnMorePress() {
-  WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/workflow/development-mode/');
-}
-
-function handleHelpPress() {
-  WebBrowser.openBrowserAsync(
-    'https://docs.expo.io/versions/latest/get-started/create-a-new-app/#making-your-first-change'
-  );
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
   },
-  developmentModeText: {
-    marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
-    fontSize: 14,
-    lineHeight: 19,
-    textAlign: 'center',
-  },
-  contentContainer: {
-    paddingTop: 30,
-  },
   welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
+    zIndex: 0,
+    position: "absolute",
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height - 140,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black"
   },
   welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height - 140,
+    resizeMode: "cover",
+    position: "absolute",
+    top: 0
   },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50,
+  tintOverlay: {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height - 140,
+    backgroundColor: "rgba(0, 0, 0, 0.25)",
+    position: "absolute",
+    top: 0
   },
-  homeScreenFilename: {
-    marginVertical: 7,
+  logo: {
+    width: Dimensions.get('window').width * 0.6,
+    height: Dimensions.get('window').width * 0.34530201342,
+    resizeMode: "contain"
   },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
+  welcomeText: {
+    color: "white",
+    fontFamily: "roboto-slab",
+    fontSize: 20,
+    marginBottom: 10
   },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4,
+  mainContainer: {
+    backgroundColor: "#fff",
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
+    padding: 40,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
+  getStartedButton: {
+    width: Dimensions.get('window').width - 80,
+    backgroundColor: "#00a24f",
+    // paddingTop: 30,
+    // paddingBottom: 30,
+    padding: 15,
+    borderRadius: 20,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center"
   },
-  tabBarInfoContainer: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: { width: 0, height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 20,
-      },
-    }),
-    alignItems: 'center',
-    backgroundColor: '#fbfbfb',
-    paddingVertical: 20,
+  gSBt: {
+    color: "white",
+    fontFamily: "roboto-slab-bold",
+    textAlign: "center",
+    fontSize: 20,
   },
-  tabBarInfoText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    textAlign: 'center',
+  contactButton: {
+    width: Dimensions.get('window').width - 80,
+    backgroundColor: "white",
+    borderWidth: 2,
+    borderColor: "#00a24f",
+    marginTop: 10,
+    padding: 7,
+    borderRadius: 20,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center"
   },
-  navigationFilename: {
-    marginTop: 5,
-  },
-  helpContainer: {
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  helpLink: {
-    paddingVertical: 15,
-  },
-  helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7',
-  },
+  cBt: {
+    color: "#00a24f",
+    fontFamily: "roboto-slab",
+    textAlign: "center",
+    fontSize: 12,
+  }
 });

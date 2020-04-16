@@ -1,0 +1,191 @@
+{
+	"_custom" : {
+		"mains" : [
+			"Grilled Steak",
+			"Ground Beef",
+			"Grilled Chicken",
+			"Fajita Chicken",
+			"Buffalo Chicken",
+			"Pulled Pork Roast",
+			"Grilled Tilapia",
+			"Chipotle Shrimp",
+			"Fried Catfish",
+			"Buffalo Fried Catfish",
+			"Blackened Catfish"
+		],
+		"toppings" : [
+			"Mexican Rice",
+			"Black Beans",
+			"Vegetarian Refried Beans",
+			"Fajita Veggies",
+			"Mushrooms",
+			"Enchilada Sauce (Mild)",
+			"Tomatillo Verde (Medium)",
+			"Chipotle Ranchero (Hot)",
+			"Queso Sauce",
+			"Lettuce",
+			"Shredded Cheese",
+			"Fresh Jalapeño",
+			"Pickled Jalapeño",
+			"Black Olives",
+			"Green Onions",
+			"Cucumbers",
+			"Corn Relish",
+			"Cilantro",
+			"Guacamole",
+			"Tomatoes",
+			"Pico de gallo",
+			"Mexican Slaw"
+		],
+		"sauces" : {
+			"Booyas Original Taco/Burrito Sauce" : 2,
+			"Mexican Ranch" : 2,
+			"Sour Cream" : 2,
+			"Cilantro-Vinaigrette" : 2,
+			"Chipotle" : 2,
+			"Greek" : 2
+		}
+	},
+
+	"Burgers" : {
+		"_thumbnail" : 10,
+		"Booya's Burger & Fries" : {
+			"Single" : 8.50,
+			"Double" : 10.50
+		},
+		"Grilled Chicken Sandwich" : 9.50,
+		"Baby Booya Burger" : 6.95,
+		"Blackened Chicken Sandwich" : 9.50,
+		"Veggie Burger" : 8.50,
+		"Turkey Burger" : 8.50
+	},
+	"Burritos" : {
+		"_thumbnail" : 30,
+		"Custom with Meat" : {
+			"Small" : 8.50,
+			"Large" : 9.50
+		},
+		"Chipotle Shrimp" : {
+			"Small" : -1,
+			"Large" : 9.95
+		},
+		"Fish" : {
+			"Small" : 8.95,
+			"Large" : 9.95
+		},
+		"Veggie" : {
+			"Small" : 7.50,
+			"Large" : 8.50
+		},
+		"Surf & Turf" : {
+			"Small" : -1,
+			"Large" : 10.95
+		}
+	},
+	"Fries" : {
+		"_thumbnail" : 20,
+		"_note": "Options",
+		"_addons": {
+			"Bacon" : 1.50,
+			"Cheese" : 0.75,
+			"Mushrooms" : 0.50,
+			"Grilled Jalapeños" : 0.50
+		},
+		"Small Fries" : 2.50,
+		"Large Fries" : 3.95,
+		"Cheese Fries" : 6.95,
+		"Chili Cheese Fries" : 8.95
+	},
+	"Nachos" : {
+		"_thumbnail" : 18,
+		"Custom with Meat" : {
+			"Small" : 8.50,
+			"Large" : 9.95
+		},
+		"Cheese Only" : {
+			"Small" : 6.50,
+			"Large" : 7.50
+		},
+		"Veggie" : {
+			"Small" : 7.95,
+			"Large" : 9.40
+		},
+		"Chipotle Shrimp" : {
+			"Small" : -1,
+			"Large" : 10.50
+		},
+		"Surf & Turf" : {
+			"Small" : -1,
+			"Large" : 11.50
+		}
+	},
+	"Quesadillas" : {
+		"_thumbnail" : 19,
+		"Custom with Meat" : {
+			"Small" : 8.50,
+			"Large" : 9.95
+		},
+		"Cheese Only" : {
+			"Small" : 6.50,
+			"Large" : 7.50
+		},
+		"Veggie" : {
+			"Small" : 7.95,
+			"Large" : 9.40
+		},
+		"Chipotle Shrimp" : {
+			"Small" : -1,
+			"Large" : 10.50
+		},
+		"Surf & Turf" : {
+			"Small" : -1,
+			"Large" : 11.50
+		}
+	},
+	"Salads" : {
+		"_note": "Options",
+		"_thumbnail" : 24,
+		"Custom Veggie" : 7.95,
+		"Custom with Meat" : 8.95,
+		"Chipotle Shrimp" : 9.95,
+		"Surf & Turf" : 10.95,
+		"Fish" : 9.95
+	},
+	"Tacos" : {
+		"_thumbnail" : 23,
+		"Custom with Meat" : {
+			"One" : 8.50,
+			"Two" : 9.95,
+			"Extra" : 1.95
+		},
+		"Meat and Cheese Only" : {
+			"One" : 3.50,
+			"Two" : 5.50,
+			"Extra" : 1.75
+		},
+		"Chipotle Shrimp" : {
+			"One" : -1,
+			"Two" : 8.95
+		},
+		"Veggie" : {
+			"One" : 3.50,
+			"Two" : 5.50,
+			"Extra" : 1.75
+		},
+		"Fish" : {
+			"One" : 4.50,
+			"Two" : 7.95,
+			"Extra" : 3.75
+		}
+	},
+	"Kids Menu" : {
+		"_note": "Comes with Chips, Salsa and Drink",
+		"Kid Taco" : 3.95,
+		"Kid Ground Beef Burrito" : 4.25,	
+		"Kid Cheese Quesadilla" : 3.95,	
+		"Kid Cheese Nacho" : 3.95,	
+		"Kid Custom Meal" : 5.50,	
+		"Kid Fries" : 1.50,	
+		"Chicken Fingers" : 4.50	
+	}
+}
